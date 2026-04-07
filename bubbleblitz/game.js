@@ -1455,8 +1455,7 @@ canvas.addEventListener(
   (e) => {
     e.preventDefault();
     const { x, y } = toLogical(e.changedTouches[0]);
-    mx = x;
-    my = y;
+    if (!isSwap(x, y)) { mx = x; my = y; }
     if (running && isSwap(x, y)) swap();
   },
   { passive: false },
@@ -1466,8 +1465,7 @@ canvas.addEventListener(
   (e) => {
     e.preventDefault();
     const { x, y } = toLogical(e.changedTouches[0]);
-    mx = x;
-    my = y;
+    if (!isSwap(x, y)) { mx = x; my = y; }
   },
   { passive: false },
 );
@@ -1483,8 +1481,9 @@ canvas.addEventListener(
 canvas.addEventListener("mousemove", (e) => {
   const rect = canvas.getBoundingClientRect(),
     sf = LW / rect.width;
-  mx = (e.clientX - rect.left) * sf;
-  my = (e.clientY - rect.top) * sf;
+  const mx_ = (e.clientX - rect.left) * sf;
+  const my_ = (e.clientY - rect.top) * sf;
+  if (!isSwap(mx_, my_)) { mx = mx_; my = my_; }
 });
 canvas.addEventListener("click", (e) => {
   const rect = canvas.getBoundingClientRect(),
