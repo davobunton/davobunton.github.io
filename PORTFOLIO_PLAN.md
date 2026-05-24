@@ -287,6 +287,11 @@ Vanilla HTML, CSS, JavaScript. No frameworks, no build tools, no dependencies.
 - Vertical spacing: `min-height: 100vh` removed. First section: 56px top, 48px bottom. All other sections: 48px top and bottom.
 - `--color-bg` tuned to `#111114` (slightly lighter than sunken for surface depth contrast)
 
+### ⏳ Phase 2c — Mobile Header
+- Hamburger menu replacing the full nav on small screens
+- Tap hamburger → full-screen or slide-in nav overlay with all links (Projects, AI Lab, About, Get in touch, CV)
+- Breakpoint TBD — discuss when we get there
+
 ### 🔜 Phase 3 — Projects Overview Page (next)
 Replace the scroll test content in `index.html` with the real projects overview layout:
 - Each project = a full-width centered moment (hook stat → one-liner → CTA → hero GIF)
