@@ -3,22 +3,39 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  // Observe all .anim-fade-up elements.
-  // When they enter the viewport, add .is-visible to trigger the CSS transition.
-  // Unobserve immediately after — animates once, doesn't re-trigger on scroll back.
+  // ----------------------------------------------------------
+  // RANDOM GRADIENTS — project cards
+  // ----------------------------------------------------------
 
-  const observer = new IntersectionObserver((entries) => {
+  document.querySelectorAll('.project-card').forEach(card => {
+    const x  = Math.floor(Math.random() * 80) + 10;
+    const y  = Math.floor(Math.random() * 80) + 10;
+    const lx = Math.floor(Math.random() * 70) + 15;
+    const ly = Math.floor(Math.random() * 70) + 15;
+    card.style.setProperty('--grad-x',       `${x}%`);
+    card.style.setProperty('--grad-y',       `${y}%`);
+    card.style.setProperty('--grad-light-x', `${lx}%`);
+    card.style.setProperty('--grad-light-y', `${ly}%`);
+  });
+
+
+  // ----------------------------------------------------------
+  // FADE-UP — content animates in on scroll
+  // ----------------------------------------------------------
+
+  const fadeObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('is-visible');
-        observer.unobserve(entry.target);
+        fadeObserver.unobserve(entry.target);
       }
     });
   }, {
     threshold: 0.1,
-    rootMargin: '0px 0px -40px 0px'  // trigger slightly before fully in view
+    rootMargin: '0px 0px -40px 0px'
   });
 
-  document.querySelectorAll('.anim-fade-up').forEach(el => observer.observe(el));
+  document.querySelectorAll('.anim-fade-up').forEach(el => fadeObserver.observe(el));
+
 
 });

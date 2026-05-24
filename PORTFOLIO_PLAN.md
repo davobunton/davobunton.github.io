@@ -278,6 +278,15 @@ Vanilla HTML, CSS, JavaScript. No frameworks, no build tools, no dependencies.
 - Guest Access one-liner locked: **"Inherited a standstill. Shipped innovation."**
 - Scroll animations: `IntersectionObserver` + `.anim-fade-up` + stagger delay classes. Headline → subtext → buttons → image animate in sequence on scroll. Fires once, no repeat. `prefers-reduced-motion` respected.
 
+### ✅ Phase 2b — Project Cards & Layout Polish (complete)
+- Project cards: full-width sunken containers (`--color-sunken` bg), edge-to-edge, no border-radius, no border
+- Random radial gradients per card via JS-set CSS custom properties (`--grad-x/y`, `--grad-light-x/y`) — regenerates on every load, each card unique
+- Two overlapping radial gradients: subtle crimson hint + warm centre fading to sunken edges — clean at all edges
+- Scroll-triggered fade-up animations: `IntersectionObserver`, fire-once, stagger delays (headline → subtext → CTAs → hero placeholder)
+- Flames explored and removed — too distracting, didn't serve the content
+- Vertical spacing: `min-height: 100vh` removed. First section: 56px top, 48px bottom. All other sections: 48px top and bottom.
+- `--color-bg` tuned to `#111114` (slightly lighter than sunken for surface depth contrast)
+
 ### 🔜 Phase 3 — Projects Overview Page (next)
 Replace the scroll test content in `index.html` with the real projects overview layout:
 - Each project = a full-width centered moment (hook stat → one-liner → CTA → hero GIF)
@@ -320,4 +329,4 @@ One at a time. Each follows the shared principles (hero → challenge → bespok
 
 | Date | What was covered |
 |------|-----------------|
-| 2026-05-24 | Full IA, nav structure, flyout pattern, keyboard accessibility, page list, project list, AI Lab framing, UI philosophy fully locked, project deep dive structure locked, projects overview layout locked, colour palette locked, typography locked, tech stack locked. Phase 1 built (foundation, tokens, page shells). Phase 2 built (header, nav, flyout, popovers, scroll animations). All nav polish: focus rings, hover borders, CV underline, sticky gap fixes, tab order. Contact details, external link icon, Guest Access copy locked. Scroll StaggeredFadeIn implemented. |
+| 2026-05-24 | Full IA, nav structure, flyout pattern, keyboard accessibility, page list, project list, AI Lab framing, UI philosophy fully locked, project deep dive structure locked, projects overview layout locked, colour palette locked, typography locked, tech stack locked. Phase 1 built (foundation, tokens, page shells). Phase 2 built (header, nav, flyout, popovers, scroll animations). All nav polish: focus rings, hover borders, CV underline, sticky gap fixes, tab order. Contact details, external link icon, Guest Access copy locked. Scroll StaggeredFadeIn implemented. Project cards: sunken containers, edge-to-edge, random radial gradients on load. Flames tried and cut. Layout spacing dialled in: 56px header→first card, 48px between cards. |
