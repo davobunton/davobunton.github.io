@@ -194,8 +194,63 @@ Scroll-driven chapters. Each section is a named, discrete moment.
 
 ---
 
+## Colour Palette & Typography
+
+### Mode
+Dark mode only. Opinionated. No toggle.
+
+### Surface depth tokens
+```
+--color-sunken:         #080809  ← darker than bg, for inset surfaces (sandbox containers, inputs)
+--color-bg:             #0d0d0f  ← base background (near black, subtle cool tint)
+--color-surface:        #141416  ← lifted cards, sections
+--color-surface-raised: #1c1c20  ← even more elevated elements
+--color-overlay:        #242428  ← popovers, modals, sidebars (Get in touch, nav flyout)
+```
+
+### Text
+```
+--color-text-headline:  #e8e8ee  ← cool off-white, not harsh pure white
+--color-text-body:      #c4c4cc  ← light metallic grey
+--color-text-muted:     #8a8a92  ← secondary / muted text
+```
+
+### Borders & dividers
+```
+--color-border:         #2a2a2e  ← subtle industrial separation
+```
+
+### Accent
+```
+--color-accent:         #b31b3a  ← deep cinematic crimson, signature colour
+```
+One signature accent only. Used sparingly and deliberately. Grey scale does the heavy lifting everywhere else. No second accent — keeps it from looking cluttered or festive.
+
+### Inspo references (saved locally in `screenshots/colorpaletteinspoexamples/`)
+5 dark portfolio/UI examples showing: near-black bases, bold single accents (gold, purple, red), industrial metallic greys, high contrast.
+
+---
+
+## Typography
+
+- **Headlines:** `Space Grotesk` — geometric, slightly engineered, distinctive. Fits the industrial dark vibe.
+- **Body:** `Inter` — bulletproof legibility on dark backgrounds.
+- Both free via Google Fonts, no licensing needed.
+
+---
+
+## Tech Stack
+
+Vanilla HTML, CSS, JavaScript. No frameworks, no build tools, no dependencies.
+- GitHub Pages is static hosting — no server needed
+- Keeps the codebase simple and readable
+- Scroll animations via native Intersection Observer API + CSS transitions
+- Deploys directly, nothing to configure
+
+---
+
 ## Session log
 
 | Date | What was covered |
 |------|-----------------|
-| 2026-05-24 | Full IA, nav structure, flyout pattern, keyboard accessibility, page list, project list, AI Lab framing, UI philosophy fully locked (scroll-driven, chapter-based, Apple/Google vibe), project deep dive structure locked, projects overview layout locked |
+| 2026-05-24 | Full IA, nav structure, flyout pattern, keyboard accessibility, page list, project list, AI Lab framing, UI philosophy fully locked, project deep dive structure locked, projects overview layout locked, colour palette locked, typography locked, tech stack locked |
