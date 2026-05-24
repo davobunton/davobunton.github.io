@@ -212,7 +212,7 @@ Dark mode only. Opinionated. No toggle.
 ```
 --color-text-headline:  #e8e8ee  ← cool off-white, not harsh pure white
 --color-text-body:      #c4c4cc  ← light metallic grey
---color-text-muted:     #8a8a92  ← secondary / muted text
+--color-text-muted:     #b0b0ba  ← secondary / muted text — verified 7.3:1 contrast ratio on overlay (#242428) via WebAIM, passes WCAG AAA normal text
 ```
 
 ### Borders & dividers
@@ -249,8 +249,75 @@ Vanilla HTML, CSS, JavaScript. No frameworks, no build tools, no dependencies.
 
 ---
 
+---
+
+## Build Roadmap
+
+### ✅ Phase 1 — Foundation (complete)
+- Repo cloned locally to `/Users/davidbunton/Code-n-shit/Folio/davobunton.github.io/`
+- Folder structure: `css/`, `js/`, `projects/`, `assets/`
+- `base.css` — full design token system, reset, typography, focus styles, button classes
+- `components.css` — header, nav, flyout, popover, CV link
+- `nav.js` — scroll header state, flyout, contact popover, active nav state
+- `scroll.js` — scaffold (empty, ready for Phase 2)
+- Page shells created: `index.html`, `ai-lab.html`, `about.html`, `projects/recurring-work.html`, `projects/formula-fields.html`, `projects/guest-access.html`
+- Scroll test content in index.html (3 project sections with placeholder content) — remove in Phase 3
+
+### ✅ Phase 2 — Header, Nav & Scroll Animations (complete)
+- Two-state sticky header: transparent at top (44px) → glassy on scroll (52px, backdrop-filter blur)
+- Projects flyout: hover + keyboard accessible, left-aligned to Projects button edge, elevation shadow
+- Contact popover: click-toggled, click-outside-to-close, elevation shadow
+- Flyout items: `tabindex="-1"` — only reachable via Down Arrow (never Tab). Tab from Projects goes straight to AI Lab.
+- All nav focus rings: tight `outline-offset: 2px`, `border-radius: 3px`, hover state NOT activated when focused — ring only
+- Hover border treatment on all flyout/popover items: `0.5px solid --color-btn-border` for accessibility (not colour-only)
+- `--shadow-overlay` elevation token added — use on any future popover/modal
+- CV underline: `border-bottom` on the full link element for a single clean line spanning "CV ↓"
+- Sticky header gap fix: flyout and popover both offset correctly in scrolled vs default header state
+- Contact details: `me@davidbunton.design`, LinkedIn `https://au.linkedin.com/in/davidbunton-design`
+- External link icon: SVG inline (svgrepo 510970), `currentColor` stroke, 16px
+- Guest Access one-liner locked: **"Inherited a standstill. Shipped innovation."**
+- Scroll animations: `IntersectionObserver` + `.anim-fade-up` + stagger delay classes. Headline → subtext → buttons → image animate in sequence on scroll. Fires once, no repeat. `prefers-reduced-motion` respected.
+
+### 🔜 Phase 3 — Projects Overview Page (next)
+Replace the scroll test content in `index.html` with the real projects overview layout:
+- Each project = a full-width centered moment (hook stat → one-liner → CTA → hero GIF)
+- Real copy, real hero GIFs/images (once available post-performance review in June)
+- Scroll animations already wired up — just needs real content dropped in
+- Remove the `<!-- SCROLL TEST CONTENT -->` blocks
+
+### ⏳ Phase 4 — Project Deep Dive Pages
+One at a time. Each follows the shared principles (hero → challenge → bespoke chapters → process → research → outcome → sandbox):
+- `recurring-work.html` — shell exists, content TBD post-June
+- `formula-fields.html` — shell exists, content TBD post-June
+- `guest-access.html` — shell exists, content TBD post-June
+- In-page sticky local nav (appears after hero, disappears above it)
+- Scroll-triggered chapter animations
+- MVP sandbox experiences (scope each one when we get there)
+
+### ⏳ Phase 5 — AI Lab Page
+- Agent vision work section
+- BubbleBlitz section
+- Structure TBD — to be discussed
+
+### ⏳ Phase 6 — About Page
+- Short personal bio
+- Email + LinkedIn (reuse contact popover or inline)
+- CV download link
+- Anything else TBD
+
+### ⏳ Phase 7 — Footer
+- Minimal. Likely: copyright, LinkedIn, "designed & built by Davo" or similar
+
+### ⏳ Phase 8 — Polish & Deploy
+- Performance pass (image optimisation, lazy loading)
+- Cross-browser/device check
+- Final accessibility audit
+- Deploy to davidbunton.design
+
+---
+
 ## Session log
 
 | Date | What was covered |
 |------|-----------------|
-| 2026-05-24 | Full IA, nav structure, flyout pattern, keyboard accessibility, page list, project list, AI Lab framing, UI philosophy fully locked, project deep dive structure locked, projects overview layout locked, colour palette locked, typography locked, tech stack locked |
+| 2026-05-24 | Full IA, nav structure, flyout pattern, keyboard accessibility, page list, project list, AI Lab framing, UI philosophy fully locked, project deep dive structure locked, projects overview layout locked, colour palette locked, typography locked, tech stack locked. Phase 1 built (foundation, tokens, page shells). Phase 2 built (header, nav, flyout, popovers, scroll animations). All nav polish: focus rings, hover borders, CV underline, sticky gap fixes, tab order. Contact details, external link icon, Guest Access copy locked. Scroll StaggeredFadeIn implemented. |
