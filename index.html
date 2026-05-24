@@ -17,28 +17,144 @@
 </head>
 <body>
 
-  <!-- HEADER — built in Phase 2 -->
-  <header id="site-header">
-    <!-- Nav goes here -->
+  <header id="site-header" role="banner">
+    <nav class="site-nav container" aria-label="Main navigation">
+
+      <!-- Left: nav links -->
+      <ul class="nav-left" role="list">
+
+        <!-- Projects + flyout -->
+        <li class="nav-item" id="nav-item-projects">
+          <a href="/index.html"
+             class="nav-link"
+             id="nav-projects"
+             aria-haspopup="true"
+             aria-expanded="false"
+             aria-controls="projects-flyout">
+            Projects
+          </a>
+          <div class="nav-flyout"
+               id="projects-flyout"
+               role="region"
+               aria-label="Projects"
+               aria-hidden="true">
+            <ul role="list">
+              <li>
+                <a href="/projects/recurring-work.html" class="flyout-item" tabindex="-1">
+                  <span class="flyout-item-title">Recurring Work</span>
+                  <span class="flyout-item-desc">Jira's first contextual inline automation</span>
+                </a>
+              </li>
+              <li>
+                <a href="/projects/formula-fields.html" class="flyout-item" tabindex="-1">
+                  <span class="flyout-item-title">Formula Fields</span>
+                  <span class="flyout-item-desc">Calculated fields built on live data</span>
+                </a>
+              </li>
+              <li>
+                <a href="/projects/guest-access.html" class="flyout-item" tabindex="-1">
+                  <span class="flyout-item-title">Guest Access</span>
+                  <span class="flyout-item-desc">Inherited a standstill. Shipped innovation.</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </li>
+
+        <!-- AI Lab -->
+        <li class="nav-item">
+          <a href="/ai-lab.html" class="nav-link" id="nav-ai-lab">AI Lab</a>
+        </li>
+
+        <!-- About -->
+        <li class="nav-item">
+          <a href="/about.html" class="nav-link">About</a>
+        </li>
+
+      </ul>
+
+      <!-- Right: CTAs -->
+      <div class="nav-right">
+
+        <!-- Get in touch + popover -->
+        <div class="nav-popover-wrapper">
+          <button class="nav-btn-contact"
+                  id="contact-btn"
+                  aria-expanded="false"
+                  aria-controls="contact-popover"
+                  aria-haspopup="dialog">
+            Get in touch
+          </button>
+          <div class="nav-popover"
+               id="contact-popover"
+               role="dialog"
+               aria-label="Get in touch"
+               aria-hidden="true">
+            <a href="mailto:me@davidbunton.design" class="popover-link">
+              me@davidbunton.design
+            </a>
+            <a href="https://au.linkedin.com/in/davidbunton-design" class="popover-link popover-link--external" target="_blank" rel="noopener noreferrer">
+              LinkedIn
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="external-link-icon">
+                <path d="M10.0002 5H8.2002C7.08009 5 6.51962 5 6.0918 5.21799C5.71547 5.40973 5.40973 5.71547 5.21799 6.0918C5 6.51962 5 7.08009 5 8.2002V15.8002C5 16.9203 5 17.4801 5.21799 17.9079C5.40973 18.2842 5.71547 18.5905 6.0918 18.7822C6.5192 19 7.07899 19 8.19691 19H15.8031C16.921 19 17.48 19 17.9074 18.7822C18.2837 18.5905 18.5905 18.2839 18.7822 17.9076C19 17.4802 19 16.921 19 15.8031V14M20 9V4M20 4H15M20 4L13 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- CV download -->
+        <a href="/assets/cv-david-bunton.pdf"
+           download
+           class="nav-cv-link"
+           aria-label="Download CV">
+          <span class="nav-cv-text">CV</span><span class="nav-cv-icon" aria-hidden="true">↓</span>
+        </a>
+
+      </div>
+
+    </nav>
   </header>
 
   <!-- MAIN — Projects overview -->
   <main id="projects">
 
-    <!-- Project 1: Recurring Work -->
-    <section class="project-overview" id="recurring-work">
-      <!-- Hook, one-liner, CTA, hero GIF — Phase 3 -->
+    <!-- SCROLL TEST CONTENT — remove in Phase 3 -->
+    <section style="min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: var(--space-lg); text-align: center; padding: var(--space-2xl);">
+      <h1 class="anim-fade-up anim-delay-1">Recurring Work in Jira</h1>
+      <p class="anim-fade-up anim-delay-2">707 work items became 186,000. Here's how.</p>
+      <div class="anim-fade-up anim-delay-3" style="display: flex; gap: var(--space-md);">
+        <a href="#" class="btn btn-primary">See the story</a>
+        <a href="#" class="btn btn-secondary">Try the sandbox</a>
+      </div>
+      <div class="anim-fade-up anim-delay-4" style="width: 100%; max-width: 800px; aspect-ratio: 16/9; background: var(--color-surface); border-radius: 12px; border: 1px solid var(--color-border); display: flex; align-items: center; justify-content: center;">
+        <p style="color: var(--color-text-muted);">Hero GIF placeholder</p>
+      </div>
     </section>
 
-    <!-- Project 2: Formula Fields -->
-    <section class="project-overview" id="formula-fields">
-      <!-- Hook, one-liner, CTA, hero GIF — Phase 3 -->
+    <section style="min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: var(--space-lg); text-align: center; padding: var(--space-2xl);">
+      <h1 class="anim-fade-up anim-delay-1">Formula Fields in Jira</h1>
+      <p class="anim-fade-up anim-delay-2">The most complex problem space I've ever navigated. Here's how I solved it.</p>
+      <div class="anim-fade-up anim-delay-3" style="display: flex; gap: var(--space-md);">
+        <a href="#" class="btn btn-primary">See the story</a>
+        <a href="#" class="btn btn-secondary">Try the sandbox</a>
+      </div>
+      <div class="anim-fade-up anim-delay-4" style="width: 100%; max-width: 800px; aspect-ratio: 16/9; background: var(--color-surface); border-radius: 12px; border: 1px solid var(--color-border); display: flex; align-items: center; justify-content: center;">
+        <p style="color: var(--color-text-muted);">Hero GIF placeholder</p>
+      </div>
     </section>
 
-    <!-- Project 3: Guest Access -->
-    <section class="project-overview" id="guest-access">
-      <!-- Hook, one-liner, CTA, hero GIF — Phase 3 -->
+    <section style="min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: var(--space-lg); text-align: center; padding: var(--space-2xl);">
+      <h1 class="anim-fade-up anim-delay-1">Guest Access in Jira</h1>
+      <p class="anim-fade-up anim-delay-2">Inherited a standstill. Shipped innovation.</p>
+      <div class="anim-fade-up anim-delay-3" style="display: flex; gap: var(--space-md);">
+        <a href="#" class="btn btn-primary">See the story</a>
+        <a href="#" class="btn btn-secondary">Try the sandbox</a>
+      </div>
+      <div class="anim-fade-up anim-delay-4" style="width: 100%; max-width: 800px; aspect-ratio: 16/9; background: var(--color-surface); border-radius: 12px; border: 1px solid var(--color-border); display: flex; align-items: center; justify-content: center;">
+        <p style="color: var(--color-text-muted);">Hero GIF placeholder</p>
+      </div>
     </section>
+    <!-- END SCROLL TEST CONTENT -->
 
   </main>
 

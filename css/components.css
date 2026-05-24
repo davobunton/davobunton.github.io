@@ -3,4 +3,276 @@
    davidbunton.design
    ============================================================ */
 
-/* Built in Phase 2 */
+
+/* ------------------------------------------------------------
+   HEADER
+   ------------------------------------------------------------ */
+
+#site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  height: 44px;
+  background: transparent;
+  border-bottom: 1px solid transparent;
+  transition:
+    height var(--transition-base),
+    background var(--transition-base),
+    border-color var(--transition-base);
+}
+
+/* Scrolled state — animates in once top header leaves view */
+#site-header.is-scrolled {
+  height: var(--header-height);
+  background: rgba(13, 13, 15, 0.88);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+
+/* ------------------------------------------------------------
+   NAV LEFT
+   ------------------------------------------------------------ */
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+}
+
+.nav-item {
+  position: relative;
+}
+
+.nav-link {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--color-text-muted);
+  transition: color var(--transition-fast);
+  padding: 3px 0;
+  display: inline-block;
+}
+
+.nav-link:focus-visible,
+.nav-cv-link:focus-visible,
+.nav-btn-contact:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+  border-radius: 3px;
+}
+
+/* Hover only — focus ring is the sole indicator when keyboard navigating */
+.nav-link:hover {
+  color: var(--color-text-headline);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.nav-link.is-active {
+  color: var(--color-text-headline);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+
+/* ------------------------------------------------------------
+   PROJECTS FLYOUT
+   ------------------------------------------------------------ */
+
+.nav-flyout {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  transform: translateY(-6px);
+  background: var(--color-overlay);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: var(--space-sm);
+  box-shadow: var(--shadow-overlay);
+  min-width: 300px;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    opacity var(--transition-base),
+    transform var(--transition-base),
+    visibility var(--transition-base);
+  z-index: 200;
+}
+
+.nav-flyout.is-visible {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.flyout-item {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: var(--space-md);
+  border-radius: 8px;
+  border: 0.5px solid transparent;
+  transition: background var(--transition-fast), border-color var(--transition-fast);
+}
+
+.flyout-item:hover,
+.flyout-item:focus {
+  background: var(--color-surface-raised);
+  border-color: var(--color-btn-border);
+  outline: none;
+}
+
+.flyout-item-title {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--color-text-headline);
+}
+
+.flyout-item-desc {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
+
+
+/* ------------------------------------------------------------
+   NAV RIGHT
+   ------------------------------------------------------------ */
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+}
+
+
+/* Get in touch button */
+.nav-btn-contact {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--color-text-muted);
+  transition: color var(--transition-fast);
+  padding: 3px 0;
+}
+
+.nav-btn-contact:hover {
+  color: var(--color-text-headline);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+
+/* Contact popover */
+.nav-popover-wrapper {
+  position: relative;
+}
+
+.nav-popover {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  /* Note: #site-header.is-scrolled .nav-popover below adjusts for taller header */
+  background: var(--color-overlay);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: var(--space-sm);
+  box-shadow: var(--shadow-overlay);
+  min-width: 240px;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-6px);
+  transition:
+    opacity var(--transition-base),
+    transform var(--transition-base),
+    visibility var(--transition-base);
+  z-index: 200;
+}
+
+.nav-popover.is-visible {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.popover-link {
+  display: block;
+  padding: var(--space-md);
+  border-radius: 8px;
+  font-size: var(--text-sm);
+  color: var(--color-text-body);
+  border: 0.5px solid transparent;
+  transition: background var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.popover-link--external {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.external-link-icon {
+  flex-shrink: 0;
+}
+
+.popover-link:hover,
+.popover-link:focus {
+  background: var(--color-surface-raised);
+  color: var(--color-text-headline);
+  border-color: var(--color-btn-border);
+  outline: none;
+}
+
+
+/* CV download */
+.nav-cv-link {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--color-text-muted);
+  transition: color var(--transition-fast);
+  display: inline-flex;
+  align-items: baseline;
+  gap: 3px;
+  border-bottom: 1px solid transparent;
+  padding-bottom: 2px;
+  transition: color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.nav-cv-link:hover {
+  color: var(--color-text-headline);
+  border-bottom-color: currentColor;
+}
+
+.nav-cv-icon {
+  font-size: var(--text-xs);
+}
+
+
+/* ------------------------------------------------------------
+   HEADER STATE OVERRIDES
+   ------------------------------------------------------------ */
+
+/* When header is sticky/scrolled (52px tall vs 44px), nav items are
+   vertically centred — their bottom edge sits further from the header's
+   bottom border. Increase offset so flyout + popover clear it cleanly. */
+#site-header.is-scrolled .nav-flyout {
+  top: calc(100% + 16px);
+}
+
+#site-header.is-scrolled .nav-popover {
+  top: calc(100% + 16px);
+}
