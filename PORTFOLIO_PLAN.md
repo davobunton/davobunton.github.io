@@ -27,7 +27,7 @@ At the start of every session, go back and forth with Davo to fully understand a
 **Site:** https://davidbunton.design/
 **Repo:** davobunton/davobunton.github.io
 **Status:** index.html is currently a bare `<h1>Coming soon</h1>`. BubbleBlitz is live at /bubbleblitz.
-**Repo not yet cloned locally.** Working dir: `/Users/davidbunton/Code-n-shit/Folio`
+**Repo not yet cloned locally.** Clone into `/Users/davidbunton/Code-n-shit/Folio/` — that's where everything lives.
 **No `gh` CLI** — use `curl` + GitHub API or `git` for repo operations.
 
 ---
