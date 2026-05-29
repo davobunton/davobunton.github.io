@@ -73,11 +73,22 @@
 
       </ul>
 
+      <!-- Hamburger (mobile only) -->
+      <button class="nav-hamburger"
+              id="nav-hamburger"
+              aria-label="Open menu"
+              aria-expanded="false"
+              aria-controls="mobile-nav">
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </button>
+
       <!-- Right: CTAs -->
       <div class="nav-right">
 
         <!-- Get in touch + popover -->
-        <div class="nav-popover-wrapper">
+        <div class="nav-popover-wrapper nav-item">
           <button class="nav-btn-contact"
                   id="contact-btn"
                   aria-expanded="false"
@@ -103,23 +114,42 @@
         </div>
 
         <!-- CV download -->
-        <a href="/assets/cv-david-bunton.pdf"
-           download
-           class="nav-cv-link"
-           aria-label="Download CV">
-          <span class="nav-cv-text">CV</span><span class="nav-cv-icon" aria-hidden="true">↓</span>
-        </a>
+        <div class="nav-item">
+          <a href="/assets/cv-david-bunton.pdf"
+             download
+             class="nav-cv-link"
+             aria-label="Download CV">
+            <span class="nav-cv-text">CV</span><span class="nav-cv-icon" aria-hidden="true">↓</span>
+          </a>
+        </div>
 
       </div>
 
     </nav>
   </header>
 
+  <!-- Mobile nav overlay -->
+  <div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+    <nav aria-label="Mobile navigation">
+      <ul class="mobile-nav-links" role="list">
+        <li><a href="/index.html" class="mobile-nav-link">Projects</a></li>
+        <li><a href="/ai-lab.html" class="mobile-nav-link">AI Lab</a></li>
+        <li><a href="/about.html" class="mobile-nav-link">About</a></li>
+        <li><button class="mobile-nav-link mobile-nav-link--btn" id="mobile-contact-btn">Get in touch</button></li>
+        <li>
+          <a href="/assets/cv-david-bunton.pdf" download class="mobile-nav-link">
+            CV <span aria-hidden="true">↓</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
   <!-- MAIN — Projects overview -->
   <main id="projects">
 
 <!-- SCROLL TEST CONTENT — remove in Phase 3 -->
-    <section style="display: flex; align-items: center; justify-content: center; padding: 52px 0 var(--space-xl) 0;">
+    <section style="display: flex; align-items: center; justify-content: center; padding: 40px 0 36px 0;">
       <div class="project-card">
 <h1 class="anim-fade-up anim-delay-1">Recurring Work in Jira</h1>
         <p class="anim-fade-up anim-delay-2">707 work items became 186,000. Here's how.</p>
@@ -133,7 +163,7 @@
       </div>
     </section>
 
-    <section style="display: flex; align-items: center; justify-content: center; padding: var(--space-xl) 0;">
+    <section style="display: flex; align-items: center; justify-content: center; padding: 36px 0;">
       <div class="project-card">
 <h1 class="anim-fade-up anim-delay-1">Formula Fields in Jira</h1>
         <p class="anim-fade-up anim-delay-2">The most complex problem space I've ever navigated. Here's how I solved it.</p>
@@ -147,7 +177,7 @@
       </div>
     </section>
 
-    <section style="display: flex; align-items: center; justify-content: center; padding: var(--space-xl) 0;">
+    <section style="display: flex; align-items: center; justify-content: center; padding: 36px 0;">
       <div class="project-card">
 <h1 class="anim-fade-up anim-delay-1">Guest Access in Jira</h1>
         <p class="anim-fade-up anim-delay-2">Inherited a standstill. Shipped innovation.</p>

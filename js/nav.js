@@ -11,10 +11,12 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.nav-link').forEach(link => {
     const href = link.getAttribute('href');
     if (!href) return;
-    const isHome    = (href === '/index.html' || href === '/') && (path === '/' || path === '/index.html');
-    const isMatch   = href !== '/index.html' && href !== '/' && path.startsWith(href.replace('.html', ''));
+    const isHome  = (href === '/index.html' || href === '/') && (path === '/' || path.endsWith('/index.html'));
+    const isMatch = href !== '/index.html' && href !== '/' && path.endsWith(href.replace('.html', '').replace(/^\//, ''));
     if (isHome || isMatch) link.classList.add('is-active');
   });
+
+
 
 
   // ----------------------------------------------------------
@@ -28,8 +30,6 @@ document.addEventListener('DOMContentLoaded', () => {
       header.classList.toggle('is-scrolled', window.scrollY > 10);
     }, { passive: true });
   }
-
-
 
 
   // ----------------------------------------------------------
@@ -137,6 +137,55 @@ document.addEventListener('DOMContentLoaded', () => {
           hideFlyout();
         }
       }, 0);
+    });
+  }
+
+
+  // ----------------------------------------------------------
+  // MOBILE NAV
+  // ----------------------------------------------------------
+
+  const hamburger  = document.getElementById('nav-hamburger');
+  const mobileNav  = document.getElementById('mobile-nav');
+
+  function openMobileNav() {
+    hamburger.classList.add('is-open');
+    mobileNav.classList.add('is-open');
+    hamburger.setAttribute('aria-expanded', 'true');
+    hamburger.setAttribute('aria-label', 'Close menu');
+    mobileNav.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeMobileNav() {
+    hamburger.classList.remove('is-open');
+    mobileNav.classList.remove('is-open');
+    hamburger.setAttribute('aria-expanded', 'false');
+    hamburger.setAttribute('aria-label', 'Open menu');
+    mobileNav.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  if (hamburger && mobileNav) {
+    hamburger.addEventListener('click', () => {
+      const isOpen = hamburger.classList.contains('is-open');
+      if (isOpen) {
+        closeMobileNav();
+      } else {
+        openMobileNav();
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && hamburger.classList.contains('is-open')) {
+        closeMobileNav();
+        hamburger.focus();
+      }
+    });
+
+    // Close overlay when a nav link is tapped
+    mobileNav.querySelectorAll('.mobile-nav-link').forEach(link => {
+      link.addEventListener('click', closeMobileNav);
     });
   }
 

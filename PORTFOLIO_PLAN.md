@@ -201,28 +201,28 @@ Dark mode only. Opinionated. No toggle.
 
 ### Surface depth tokens
 ```
---color-sunken:         #080809  ← darker than bg, for inset surfaces (sandbox containers, inputs)
---color-bg:             #0d0d0f  ← base background (near black, subtle cool tint)
---color-surface:        #141416  ← lifted cards, sections
---color-surface-raised: #1c1c20  ← even more elevated elements
---color-overlay:        #242428  ← popovers, modals, sidebars (Get in touch, nav flyout)
+--color-sunken:         #171719  ← darker than bg, for inset surfaces (sandbox containers, inputs)
+--color-bg:             #1c1c1f  ← base background (near black, subtle warm-cool tint)
+--color-surface:        #242428  ← lifted cards, sections
+--color-surface-raised: #2e2e33  ← even more elevated elements
+--color-overlay:        #38383f  ← popovers, modals, sidebars (Get in touch, nav flyout)
 ```
 
 ### Text
 ```
---color-text-headline:  #e8e8ee  ← cool off-white, not harsh pure white
---color-text-body:      #c4c4cc  ← light metallic grey
---color-text-muted:     #b0b0ba  ← secondary / muted text — verified 7.3:1 contrast ratio on overlay (#242428) via WebAIM, passes WCAG AAA normal text
+--color-text-headline:  #ededf2  ← cool off-white, not harsh pure white
+--color-text-body:      #cbcbd4  ← light metallic grey
+--color-text-muted:     #bcbcc7  ← secondary / muted text
 ```
 
 ### Borders & dividers
 ```
---color-border:         #2a2a2e  ← subtle industrial separation
+--color-border:         #34343a  ← subtle industrial separation
 ```
 
 ### Accent
 ```
---color-accent:         #b31b3a  ← deep cinematic crimson, signature colour
+--color-accent:         #c4356a  ← warm magenta, signature colour
 ```
 One signature accent only. Used sparingly and deliberately. Grey scale does the heavy lifting everywhere else. No second accent — keeps it from looking cluttered or festive.
 
@@ -335,3 +335,4 @@ One at a time. Each follows the shared principles (hero → challenge → bespok
 | Date | What was covered |
 |------|-----------------|
 | 2026-05-24 | Full IA, nav structure, flyout pattern, keyboard accessibility, page list, project list, AI Lab framing, UI philosophy fully locked, project deep dive structure locked, projects overview layout locked, colour palette locked, typography locked, tech stack locked. Phase 1 built (foundation, tokens, page shells). Phase 2 built (header, nav, flyout, popovers, scroll animations). All nav polish: focus rings, hover borders, CV underline, sticky gap fixes, tab order. Contact details, external link icon, Guest Access copy locked. Scroll StaggeredFadeIn implemented. Project cards: sunken containers, edge-to-edge, random radial gradients on load. Flames tried and cut. Layout spacing dialled in: 56px header→first card, 48px between cards. |
+| 2026-05-29 | Phase 2c built: mobile hamburger menu, full-screen slide-down overlay, morph to ✕ animation, body scroll lock, Escape key close. Active nav indicator: Apple-style flush bottom border line (scrolled state only) + bold + headline colour. Hover state unified across all nav items — text underline (non-scrolled), flush bottom line (scrolled). Full palette refresh: surfaces lifted and warmed, accent changed from deep crimson to warm magenta (#c4356a), text tokens lifted, border token updated, subtle noise/grain texture added to bg. Flyout/popover gap tightened. Section spacing reduced. |

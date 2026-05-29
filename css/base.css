@@ -11,23 +11,23 @@
 :root {
 
   /* Surface depth */
-  --color-sunken:         #080809;   /* inset surfaces — sandbox containers, inputs */
-  --color-bg:             #111114;   /* base background */
-  --color-surface:        #141416;   /* lifted cards, sections */
-  --color-surface-raised: #1c1c20;   /* even more elevated elements */
-  --color-overlay:        #242428;   /* popovers, modals, sidebars */
+  --color-sunken:         #171719;   /* inset surfaces — sandbox containers, inputs */
+  --color-bg:             #1c1c1f;   /* base background */
+  --color-surface:        #242428;   /* lifted cards, sections */
+  --color-surface-raised: #2e2e33;   /* even more elevated elements */
+  --color-overlay:        #38383f;   /* popovers, modals, sidebars */
 
   /* Text */
-  --color-text-headline:  #e8e8ee;   /* cool off-white */
-  --color-text-body:      #c4c4cc;   /* light metallic grey */
-  --color-text-muted:     #b0b0ba;   /* secondary / muted — 7.3:1 on overlay, passes WCAG AAA */
+  --color-text-headline:  #ededf2;   /* cool off-white */
+  --color-text-body:      #cbcbd4;   /* light metallic grey */
+  --color-text-muted:     #bcbcc7;   /* secondary / muted */
 
   /* Border */
-  --color-border:         #2a2a2e;
+  --color-border:         #34343a;
 
   /* Accent */
-  --color-accent:         #b31b3a;   /* deep cinematic crimson */
-  --color-accent-hover:   #c9203f;   /* slightly lighter on hover */
+  --color-accent:         #c4356a;   /* warm magenta */
+  --color-accent-hover:   #d4407a;   /* slightly lighter on hover */
 
   /* Focus */
   --color-focus:          #2997ff;   /* Apple blue — accessible focus ring */
@@ -100,6 +100,17 @@ body {
   font-size: var(--text-base);
   line-height: 1.6;
   min-height: 100vh;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.07;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
 }
 
 img, video {
