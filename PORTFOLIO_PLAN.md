@@ -287,7 +287,7 @@ Vanilla HTML, CSS, JavaScript. No frameworks, no build tools, no dependencies.
 - Vertical spacing: `min-height: 100vh` removed. First section: 56px top, 48px bottom. All other sections: 48px top and bottom.
 - `--color-bg` tuned to `#111114` (slightly lighter than sunken for surface depth contrast)
 
-### ⏳ Phase 2c — Mobile Header
+### ✅ Phase 2c — Mobile Header
 - Hamburger menu replacing the full nav on small screens
 - Tap hamburger → full-screen or slide-in nav overlay with all links (Projects, AI Lab, About, Get in touch, CV)
 - Breakpoint TBD — discuss when we get there
@@ -335,4 +335,4 @@ One at a time. Each follows the shared principles (hero → challenge → bespok
 | Date | What was covered |
 |------|-----------------|
 | 2026-05-24 | Full IA, nav structure, flyout pattern, keyboard accessibility, page list, project list, AI Lab framing, UI philosophy fully locked, project deep dive structure locked, projects overview layout locked, colour palette locked, typography locked, tech stack locked. Phase 1 built (foundation, tokens, page shells). Phase 2 built (header, nav, flyout, popovers, scroll animations). All nav polish: focus rings, hover borders, CV underline, sticky gap fixes, tab order. Contact details, external link icon, Guest Access copy locked. Scroll StaggeredFadeIn implemented. Project cards: sunken containers, edge-to-edge, random radial gradients on load. Flames tried and cut. Layout spacing dialled in: 56px header→first card, 48px between cards. |
-| 2026-05-29 | Phase 2c built: mobile hamburger menu, full-screen slide-down overlay, morph to ✕ animation, body scroll lock, Escape key close. Active nav indicator: Apple-style flush bottom border line (scrolled state only) + bold + headline colour. Hover state unified across all nav items — text underline (non-scrolled), flush bottom line (scrolled). Full palette refresh: surfaces lifted and warmed, accent changed from deep crimson to warm magenta (#c4356a), text tokens lifted, border token updated, subtle noise/grain texture added to bg. Flyout/popover gap tightened. Section spacing reduced. |
+| 2026-05-31 | Phase 2c built: mobile hamburger menu, full-screen slide-down overlay, morph to ✕ animation, body scroll lock, Escape key close. Active nav indicator: Apple-style flush bottom border line (scrolled state only) + bold + headline colour. Hover state unified across all 4 nav items — text underline (non-scrolled), flush bottom line (scrolled). Full palette refresh: surfaces lifted and warmed, accent changed from deep crimson to warm magenta (#c4356a), text tokens lifted, border token updated, subtle noise/grain texture added to bg. Flyout/popover gap: 0px non-scrolled, 8px scrolled. Section spacing tightened to 24px. |

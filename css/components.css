@@ -451,3 +451,9 @@
    HEADER STATE OVERRIDES
    ------------------------------------------------------------ */
 
+/* Non-scrolled: tighter gap since nav items don't fill full header height */
+#site-header:not(.is-scrolled) .nav-flyout,
+#site-header:not(.is-scrolled) .nav-popover {
+  top: 100%;
+}
+
